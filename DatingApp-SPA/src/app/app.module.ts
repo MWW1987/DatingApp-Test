@@ -26,6 +26,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { UserService } from './_services/user.service';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
+import { PreventUnsavedChanges } from './_guards/prevent-unssaved-changes.guard';
 
 
 
@@ -69,8 +71,10 @@ export function tokenGetter () {
       AuthGuard,
       UserService,
       MemberDetialResolver,
-      MemberListResolver
-   ],
+      MemberListResolver,
+      MemberEditResolver,
+      PreventUnsavedChanges
+       ],
    bootstrap: [
       AppComponent
    ]
