@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ListsComponent } from './lists/lists.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -17,6 +18,7 @@ export const appRoutes: Routes = [
         children: [
             {path: 'members', component: MemberListComponent, resolve: { users: MemberListResolver}},
             {path: 'members/:id', component: MemberDetailComponent, resolve: { user: MemberDetialResolver}},
+            {path: 'member/edit', component: MemberEditComponent},
             {path: 'messages', component: MessagesComponent},
             {path: 'lists', component: ListsComponent}
         ]
