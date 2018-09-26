@@ -12,7 +12,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./member-edit.component.css']
 })
 export class MemberEditComponent implements OnInit {
-  @ViewChild('editFrom') editForm: NgForm;
+  @ViewChild('editForm') editForm: NgForm;
   user: User;
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any) {
