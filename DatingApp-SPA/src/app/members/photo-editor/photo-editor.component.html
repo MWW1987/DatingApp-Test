@@ -5,7 +5,7 @@
       <button type="button" class="btn btn-sm mr-1"  (click)="setMainPhoto(p)" [disabled]="p.isMain"
       [ngClass]="p.isMain ? 'btn-success active' : 'btn-default'"
        style="color: black">Main</button>
-      <button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></button>
+      <button type="button" class="btn btn-sm btn-danger" (click)="deletePhoto(p.id)" [disabled]="p.isMain"><i class="fa fa-trash-o"></i></button>
     </div>
   </div>
 </div>
@@ -14,7 +14,7 @@
  
   <div class="col-md-3">
 
-      <h3>Add Photos</h3>
+      <h4>Add Photos</h4>
 
       <div ng2FileDrop
            [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
