@@ -53,6 +53,8 @@ namespace DatingApp.API.Migrations
 
                     b.Property<DateTime>("DateOfBirth");
 
+                    b.Property<string>("Gender");
+
                     b.Property<string>("Interests");
 
                     b.Property<string>("Introduction");
