@@ -81,7 +81,7 @@ namespace DatingApp.API
                 // app.UseHsts();
             }
 
-            // app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             // seeder.SeedUser();
             
 
@@ -90,7 +90,14 @@ namespace DatingApp.API
                     .AllowAnyHeader()
                     .AllowAnyMethod());
             app.UseAuthentication();
-            app.UseMvc();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+            app.UseMvc(route => {
+                route.MapSpaFallbackRoute(
+                    name: "spa-fallback",
+                    defaults: new { controller ="Fallback", action = "Index"}
+                );
+            });
         }
     }
 }

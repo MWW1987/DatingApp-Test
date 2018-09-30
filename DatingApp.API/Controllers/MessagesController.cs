@@ -53,9 +53,10 @@ namespace DatingApp.API.Controllers
 
             repo.Add(message);
             
+            var messageToReturn = mapper.Map<MessageFroCreationDto>(message);
 
             if (await repo.SaveAll())
-                return CreatedAtRoute("GetMessage", new { id = message.Id}, message);
+                return CreatedAtRoute("GetMessage", new { id = message.Id}, messageToReturn);
             
             throw new Exception("Creating Message failed on save");
 
