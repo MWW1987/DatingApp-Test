@@ -31,6 +31,7 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unssaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { ListsResolver } from './_resolvers/lists.resolver';
 
 
 
@@ -84,7 +85,8 @@ export function tokenGetter () {
       MemberDetialResolver,
       MemberListResolver,
       MemberEditResolver,
-      PreventUnsavedChanges
+      PreventUnsavedChanges,
+      ListsResolver
        ],
    bootstrap: [
       AppComponent
